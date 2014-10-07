@@ -1,0 +1,434 @@
+*,
+:before,
+:after {
+    box-sizing: border-box;
+}
+
+
+ul, li {
+    list-style: none;
+}
+
+
+
+.center {
+    max-width: 660px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+    position: relative;
+}
+
+
+.left {
+    float: left;
+    width: 100%;
+}
+
+.right {
+    float: left;
+    width: 38%;
+}
+
+
+
+/* Post
+   ------------------------------------------ */
+
+.post-media {
+    position: relative;
+}
+
+
+
+
+
+
+
+
+/* Slider
+   ---------------------------------------------- */
+
+.fs {
+    margin-bottom: 2rem;
+    position: relative;
+    width: auto;
+}
+
+/* viewport */
+.fs-viewport {
+    position: relative;
+    overflow: hidden;
+}
+
+
+
+
+
+
+
+
+/* Slides
+   ---------------------------------------------- */
+
+.fs-slides {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+/* item */
+.fs-slides__item {
+    display: none;
+    position: relative;
+    visibility: hidden;
+    width: 100%;
+}
+.fs-slides__item--active {
+    display: block;
+    visibility: visible;
+}
+
+/* TODO: this might need to be removed */
+.fs-slides__item > .centered {
+    background-color: #000;
+}
+
+/* image */
+.fs-slides__image {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+
+/* Fullscreen mode */
+.fs--fullscreen .fs-slides__item--active {
+    background-color: #000;
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 10;
+}
+
+/* item image */
+.fs--fullscreen .fs-slides__item--active .fs-slides__image {
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+}
+
+
+/* TODO: this mihgt be general rule, not just for full screen */
+.fs--fullscreen .centered {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    -webkit-transform: translate(50%,50%);
+    -moz-transform: translate(50%,50%);
+    -ms-transform: translate(50%,50%);
+    -o-transform: translate(50%,50%);
+    transform: translate(50%,50%);
+}
+.fs--fullscreen .centered > img {
+    left: 0;
+    max-width: 100%;
+    max-height: 100%;
+    position: absolute;
+    top: 0;
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+}
+
+
+
+
+
+
+
+
+/* Slide description
+   ---------------------------------------------- */
+
+.fs-slides__description {
+    margin-top: 16px;
+}
+
+/* title */
+.fs-slides__title {
+    font-size: 21px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+/* text */
+.fs-slides__text {
+    font-size: 13px;
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+
+
+
+/* fullscreen mode */
+.fs--fullscreen .fs-slides__description {
+    background: rgba(0,0,0,0.4);
+    bottom: 0;
+    color: #fff;
+    margin-top: 0;
+    left: 0;
+    position: fixed;
+    padding: 15px;
+    right: 0;
+}
+
+
+
+
+
+
+
+
+/* Slider nav
+   ---------------------------------------------- */
+
+.fs-nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.fs-nav:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+
+
+
+
+/* items */
+[class^=fs-nav__] {
+    background-color: rgba( 0,0,0, 0.3 );
+    margin-top: -15px;
+    padding: 10px;
+    position: absolute;
+    top: 50%;
+}
+
+[class^=fs-nav__] > a {
+    background-image: url(../images/icons/arrows.png);
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    cursor: pointer;
+    display: block;
+    height: 35px;
+    text-indent: -999em;
+    width: 20px;
+}
+
+/* prev */
+.fs-nav__prev {
+    left: 0;
+}
+.fs-nav__prev > a:hover {
+    background-position: 0 -35px;
+}
+
+/* next */
+.fs-nav__next {
+    right: 0;
+}
+.fs-nav__next > a {
+    background-position: -20px 0;
+}
+.fs-nav__next > a:hover {
+    background-position: -20px -35px;
+}
+
+
+
+
+/* fullscreen mode */
+.fs--fullscreen [class^=fs-nav__] {
+    position: fixed;
+    z-index: 11;
+}
+
+
+
+
+
+
+
+
+/* Controls - fulscreen
+   ------------------------------------------------ */
+
+.fs-fullscreen-sw {
+    background: rgba( 0,0,0,0.5 );
+    color: #fff;
+    cursor: pointer;
+    font-weight: 100;
+    padding: 4px;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    z-index: 10;
+}
+.fs-fullscreen-sw:hover {
+    color: #eee;
+}
+
+
+
+
+/* fullscreen mode */
+.fs--fullscreen .fs-fullscreen-sw {
+    left: 10px;
+    position: fixed;
+    top: 10px;
+    z-index: 11;
+}
+
+
+
+
+
+
+
+
+/* Pagination
+   ----------------------------------------------- */
+
+.fs-pages {
+    text-align: center;
+    width: 100%;
+}
+.fs-pages__item {
+    background-color: #eee;
+    border-radius: 50%;
+    cursor: pointer;
+    display: inline-block;
+    height: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+    text-indent: -9999em;
+    vertical-align: top;
+    width: 10px;
+}
+.fs-pages__item--active,
+.fs-pages__item:hover {
+    background: #666;
+}
+
+
+
+
+
+
+
+
+/* Thumbs
+   ------------------------------------------------ */
+
+.fs-thumbs {
+    font-size: 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+    width: 100%;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+}
+
+.fs-thumbs--hidden {
+    display: none;
+}
+
+/* item */
+.fs-thumbs-list__item {
+    background: none;
+    border: solid transparent 7px;
+    display: inline-block;
+    height: 72px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    position: relative;
+    vertical-align: middle;
+    width: 100px;
+}
+.fs-thumbs-list__item:hover {
+    border-color: #b4882d;
+}
+
+.fs-thumbs-list__image {
+    border: solid #eee 1px;
+    height: 70px;
+    width: 100px;
+}
+
+/* centered */
+.fs-thumbs-list__item > .centered {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    -webkit-transform: translate(50%,50%);
+    -moz-transform: translate(50%,50%);
+    -ms-transform: translate(50%,50%);
+    -o-transform: translate(50%,50%);
+    transform: translate(50%,50%);
+}
+.fs-thumbs-list__item > .centered > img {
+    left: 0;
+    max-width: 100%;
+    max-height: 100%;
+    position: absolute;
+    top: 0;
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+}
+
+
+
+
+
+
+
+
+/* Thumbs in fullscreen
+   ------------------------------------------------ */
+
+.b-fs--fullscreen .fs-thumbs {
+    background: url(../images/bg-semi-black.png) repeat;
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    right: 0;
+    z-index: 10;x
+}
+
+
+
